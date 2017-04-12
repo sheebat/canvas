@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <style type="text/css">
+
+        .outcircle{
+            height: 200px;
+            width: 200px;
+            border-radius:100px;
+            border:solid 2px black;
+            background-color: red;
+            position: relative;
+        }
+        .incircle{
+            height: 100px;
+            width: 100px;
+            border-radius:50px;
+            border:solid 2px yellow;
+            top: 50px;
+            left: 50px;
+            position: relative;
+            background-color: blue;
+        }
+    </style>
+    <script type="text/javascript">
+        var inter;
+        var pos=0;
+        function move(){
+           
+            var value=document.getElementById("mov");
+
+
+            inter = setInterval(change, 50);
+
+            function change(){
+
+                value.style.left=pos+"px";
+                pos=pos+1;
+            }
+        }
+        function stop(){
+            clearInterval(inter);
+        }
+
+    </script>
+
+</head>
+<body>
+
+
+<div id="mov" class="outcircle">
+    <div class="incircle"> </div>
+</div>
+
+
+<button onclick="move()" >start</button>
+<button onclick="stop()">stop</button>
